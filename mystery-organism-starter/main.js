@@ -50,5 +50,3 @@ function generate30() {
   }
   return organismArray;
 }
-
-console.log(generate30())
