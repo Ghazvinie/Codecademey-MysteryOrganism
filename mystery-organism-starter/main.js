@@ -42,10 +42,11 @@ function pAequorFactory(num, dnaArray) {
 
 function generate30() {
   let organismArray = [];
-  for (let i = 0; i < 30; i++) {
+  let i = 0;
+  while (organismArray.length !== 30) {
     organismArray.push(pAequorFactory(i, mockUpStrand()));
+    organismArray = organismArray.filter(element => element.willLikelySurvive());
+    i ++;
   }
   return organismArray;
 }
-
-console.log(generate30())
