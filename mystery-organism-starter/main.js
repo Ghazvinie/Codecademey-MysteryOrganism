@@ -44,9 +44,11 @@ function generate30() {
   let organismArray = [];
   let i = 0;
   while (organismArray.length !== 30) {
-    organismArray.push(pAequorFactory(i, mockUpStrand()));
-    organismArray = organismArray.filter(element => element.willLikelySurvive());
+    let organism = pAequorFactory(i, mockUpStrand());
+    if (organism.willLikelySurvive()) organismArray.push(organism);
     i ++;
   }
   return organismArray;
 }
+
+console.log(generate30())
